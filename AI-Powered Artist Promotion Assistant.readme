@@ -1,0 +1,46 @@
+# AI-Powered Artist Promotion Assistant
+
+## Overview
+This project is an **agentic AI system** that helps a contemporary artist discover and ethically engage with high-intent art buyers across Reddit, Instagram, and Pinterest.
+
+The system uses a **multi-agent architecture** with Human-in-the-Loop oversight, ensuring that all outbound messages remain authentic, on-brand, and compliant with platform policies.
+
+## Problem Statement
+The client produces museum-quality art and has a professional online presence, but almost **no direct online sales**. Manual monitoring of thousands of social conversations is impossible at scale.
+
+## Solution
+- Social listening agents monitor art-related conversations.
+- Filtering agents score and prioritize opportunities (0–100).
+- Response agents generate three value-first response variants.
+- A React dashboard lets the artist **approve, edit, or reject** each response.
+- An RLHF loop learns from edits and approvals over time.
+
+## Architecture (High-Level)
+- **Frontend:** React + Socket.IO (artist dashboard)
+- **Backend:** Python 3.11+, Flask 3.0 REST API
+- **AI:** Claude Sonnet 4.5 (reasoning), LangGraph multi-agent orchestration
+- **Storage:** PostgreSQL (relational), Pinecone (vector search), Redis cache
+- **Hosting:** Render (backend), Vercel (frontend)
+
+## Folders
+- `src/` – Application code (agents, API, utilities)
+- `data/` – Sample or synthetic data for development
+- `models/` – Configuration + artifacts for prompts and RLHF
+- `results/` – Metrics, logs, evaluation exports
+- `docs/` – Design docs, diagrams, and additional notes
+
+## How to Run (Conceptual)
+1. Start PostgreSQL & Redis services.
+2. Launch the Flask backend (`src/api`).
+3. Run the agent scheduler for collection + scoring.
+4. Start the React dashboard.
+5. Log in as the artist and begin reviewing opportunities.
+
+*(You can fill in exact commands once you finalize your implementation.)*
+
+## Skills Demonstrated
+- AI agentic workflows and RLHF
+- LLM integration and prompt engineering
+- Database schema + data pipeline design
+- Ethical, legal, and financial modeling for AI systems
+- Professional documentation and presentation
